@@ -4,12 +4,12 @@ import { useState, useMemo } from 'react'
 function App() {
   const [text, setText] = useState('');
 
-  function isNumber() {
+  function isNumber(text) {
     return /^\d+$/.test(text);
   }
 
-  const number = useMemo(() => isNumber(), [isNumber]);
-  
+  const number = useMemo(() => isNumber(text), [text]);
+
   return (
     <div className="App">
      <div className="control has-icons-right">
